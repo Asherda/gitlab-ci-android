@@ -8,13 +8,14 @@
 FROM ubuntu:16.04
 MAINTAINER Jan Grewe <jan@faked.org>
 
-ENV VERSION_SDK_TOOLS "3859397"
+ENV VERSION_SDK_TOOLS "3952940"
 
 ENV ANDROID_HOME "/sdk"
 ENV PATH "$PATH:${ANDROID_HOME}/tools"
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get -qq update && \
+    apt-get upgrade \
     apt-get install -qqy --no-install-recommends \
       curl \
       html2text \
@@ -24,6 +25,7 @@ RUN apt-get -qq update && \
       lib32gcc1 \
       lib32ncurses5 \
       lib32z1 \
+      git \
       unzip \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
