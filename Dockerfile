@@ -19,6 +19,7 @@ RUN apt-get -qq update && \
     apt-get install -qqy --no-install-recommends \
       curl \
       html2text \
+      openssh-client \
       openjdk-8-jdk \
       libc6-i386 \
       lib32stdc++6 \
