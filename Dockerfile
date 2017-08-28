@@ -15,7 +15,7 @@ ENV PATH "$PATH:${ANDROID_HOME}/tools"
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get -qq update && \
-    apt-get upgrade \
+    apt-get -qq upgrade && \
     apt-get install -qqy --no-install-recommends \
       curl \
       html2text \
